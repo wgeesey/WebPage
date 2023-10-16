@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <!--
+   
+    
+   Author: William Geesey
+   Date:   8/4/2023
+
+    Filename: commerce_order.html
+   -->
+   
+   <title>Bakery</title>
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <link href="commerce_base.css" rel="stylesheet"  />
+   <link href="order_layout1.css" rel="stylesheet"  />
+   <script src="commerce_order.js" async></script> 
+</head>
+
+<body>
+   <header>
+	  <section id="heading">
+	  <h1>Welcome to Prissy's Bakery</h1>
+	  </section>
+      <nav id="toptop">
+         <ul>
+		    <li><a href="commerce_home.html">Home</a></li>
+			<li><a href="commerce_products.html">Products</a></li>
+            <li><a href="commerce_contact.html">Contact Us</a></li> 
+         </ul>
+      </nav>
+   </header>
+    <div id="leftside">
+   <section id="summary">
+      <h1>Order Form</h1>
+		<h2>Order now online or by phone.</h2>
+		<img id="productPic"  alt="" />
+		<p>Our Pi&#241;ata Cakes and Cupcakes are made fresh and include your choice of frosting, 
+		   cake flavor and candy filling.<br>Pi&#241;ata Cake: $29.95 ea. <br>Cupcakes(per dozen): $19.99</p>
+   </section>
+   </div>
+   <div id="rightside">
+   <section id="orderSection">
+      <form id="orderForm" name="orderForm" method="get" action="commerce_cart.html">
+        <table id="orderTable1">
+           <caption>Product Order</caption>
+		   <tr>
+				<td colspan="4">
+				<label for="orderDate">Order Date</label>
+                <input type="text" id="orderDate" name="orderDate" readonly />
+				</td>
+			</tr>
+           <tr>
+				<td>
+                 <label for="product">Product</label>
+                 <select name="product" id="product" >
+                    <option selected>Pinata Cake</option>
+                    <option>Pinata Cupcake</option>
+                 </select>
+				</td>
+				<td>
+                 <input type="hidden" id="productType" name="productType" />
+              </td>
+			</tr>
+           <tr>
+                <td>
+                 <label for="cake">Cake Flavor</label>
+                 <select name="cake" id="cake">
+                    <option selected>Chocolate Cake</option>
+                    <option>Vanilla Cake</option>
+					<option>Yellow Cake</option>
+                 </select> 
+				</td>
+				<td>
+                 <input type="hidden" id="cakeFlavor" name="cakeFlavor" />
+              </td>             
+           </tr>
+		   <tr>
+				<td>
+                 <label for="frosting">Frosting</label>
+                 <select name="frosting" id="frosting">
+                    <option selected>Chocolate Frosting</option>
+                    <option>Vanilla Frosting</option>
+                 </select>   
+                 <input type="hidden" id="frostingFlavor" name="frostingFlavor" />
+              </td>			  
+           </tr>
+		   <tr>
+              <td>
+                 <label for="candy">Candy</label>
+                 <select name="candy" id="candy">
+                    <option>MandMs</option>
+                    <option>Reese's Pieces</option>
+					<option>Sprinkles</option>
+                 </select>   
+                 <input type="hidden" id="candyType" name="candyType" />
+              </td>                
+           </tr>
+		   <tr>
+			  <td>
+                 <label for="qty">Qty</label>
+                 <select name="qty" id="qty">
+                    <option value="0" selected>0</option><option value="1">1</option>
+                    <option value="2">2</option><option value="3">3</option>
+                    <option value="4">4</option><option value="5">5</option>
+			 </tr>
+		</table>
+		<table id="totalTable">
+			<tr>
+              <td colspan="2" class="rightA">Subtotal</td>
+              <td class="outcell">
+                 <input type="text" name="subtotal" id="subtotal" size="10" readonly />
+              </td>
+           </tr>
+		   <tr>
+              <td colspan="2" class="rightA">Total</td>
+              <td class="outcell">
+                 <input type="text" name="carttotal" id="carttotal" size="10" readonly />
+              </td>
+           </tr>
+		</table>
+
+			<input type="button" id="addToCart" value="Add To Cart" />
+			<input type="submit" id="viewCart" value="View Cart" />
+
+      </form>
+   </section>
+   </div>
+   
+   <footer>
+      <nav id="bottom">
+         <ul>
+            <li><a href="#"><img id="fbicon" src="co_fbicon.png" alt="" />facebook</a></li>
+            <li><a href="#"><img id="twittericon" src="co_twittericon.png" alt="" />twitter</a></li>
+         </ul>
+         <ul>
+            <li><a href="#">Help &amp; Info</a></li>
+         </ul>        
+         <ul>
+            <li><a href="#">Contact Us</a></li>
+         </ul>
+      </nav>
+      <p>Prissy's Bakery &copy; 2023 All Rights Reserved</p>
+   </footer>
+</body>
+</html>

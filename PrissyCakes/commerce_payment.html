@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <!--
+    New Perspectives on HTML5, CSS3 and JavaScript 6th Edition
+    Tutorial 13
+    Tutorial Case
+    
+    Coctura Payment Page
+   Author: William Geesey
+   Date:   7/18/2023
+
+    Filename: co_payment.html
+   -->
+   
+   <title>Prissy's Bakery</title>
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <link href="commerce_base.css" rel="stylesheet"  />
+   <link href="commerce_layout2.css" rel="stylesheet"  />      
+   <script src="commerce_payment.js" async></script> 
+</head>
+
+<body>
+   <header>
+	  <section id="heading">
+	  <h1>Welcome to Prissy's Bakery</h1>
+	  </section>
+      <nav id="toptop">
+         <ul>
+		    <li><a href="commerce_home.html">Home</a></li>
+			<li><a href="commerce_products.html">Products</a></li>
+			<li><a href="commerce_order.html">Order Now</a></li>
+            <li><a href="commerce_contact.html">Contact Us</a></li> 
+         </ul>
+      </nav>
+   </header>
+   <section id="paySection">
+      <h1>Payment Form</h1>
+      <form id="order" name="order"> 
+				<label for="orderDate">Order Date</label>
+                <input type="text" id="orderDate" name="orderDate" readonly />
+		<table id="totalTable">
+			<caption>Your Total</caption>
+			<tr>
+              <td colspan="2" class="total">Subtotal: </td>
+              <td>
+                 <input type="text" name="subtotal" id="subtotal" size="5" readonly  />
+              </td>
+           </tr>
+
+           <tr>
+              <td colspan="2" class="total">Tax (5%)</td>
+              <td>
+                 <input type="text" name="salesTax" id="salesTax" size="5" readonly  />
+              </td>
+           </tr>
+
+           <tr>
+              <td colspan="2" class="total">TOTAL</td>
+              <td>
+                 <input type="text" name="totalCost" id="totalCost" size="5" readonly  />
+              </td>
+           </tr>
+		</table>
+      </form>      
+
+      <form id="payment" name="payment" method="post" action="commerce_temp.html">         
+         <fieldset id="creditcard">
+            <legend>Credit Information</legend>
+
+            <label for="cardName">Name*</label>
+            <input name="cardName" id="cardName" required type="text" />              
+
+            <fieldset id="cards">
+               <label class="cardLabel">Credit Card*</label>
+               <label class="cardLabel">
+                  <input name="credit" value="amex" type="radio" required />
+                  <img src="commerce_amex.png" alt="American Express" />
+               </label>
+               <label class="cardLabel">               
+                  <input name="credit" value="discover" type="radio" />
+                  <img src="commerce_discover.png" alt="Discover" />
+               </label>
+               <label class="cardLabel">                  
+                  <input name="credit" value="master" type="radio"  />
+                  <img src="commerce_master.png" alt="MasterCard" />
+               </label>
+               <label class="cardLabel">                  
+                  <input name="credit" value="visa" type="radio"  />
+                  <img src="commerce_visa.png" alt="Visa" />
+               </label>
+            </fieldset>          
+
+            <label for="cardNumber">Credit Card Number*</label>
+            <input name="cardNumber" id="cardNumber" required type="text"
+                   pattern="^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$"/>
+
+            <label for="expMonth">Expiration Date*</label>
+            <select id="expMonth" name="expMonth">
+               <option value="mm">mm</option>
+               <option value="01">01</option>
+               <option value="01">02</option>
+               <option value="01">03</option>
+               <option value="01">04</option>
+               <option value="01">05</option>
+               <option value="01">06</option>
+               <option value="01">07</option>
+               <option value="01">08</option>
+               <option value="01">09</option>
+               <option value="01">10</option>
+               <option value="01">11</option>
+               <option value="01">12</option>
+            </select>
+            <span> / </span>
+            <select id="expYear" name="expYear">
+               <option value="yy">yy</option>
+               <option value="2018">2018</option>
+               <option value="2019">2019</option>
+               <option value="2020">2020</option>
+               <option value="2021">2021</option>
+               <option value="2022">2022</option>
+            </select>            
+
+            <label for="cvc">CVC*</label>
+            <input name="cvc" id="cvc" required pattern="^\d{3,4}$" type="text"/>
+         </fieldset>
+
+         <p id="footnote">* - Required Item</p>        
+         <input type="submit" id="subButton" value="Submit Payment" />         
+      </form>
+
+   </section>
+   
+   <footer>
+      <nav id="bottom">
+         <ul>
+            <li><a href="#"><img id="fbicon" src="co_fbicon.png" alt="" />facebook</a></li>
+            <li><a href="#"><img id="twittericon" src="co_twittericon.png" alt="" />twitter</a></li>
+         </ul>
+         <ul>
+            <li><a href="#">Help &amp; Info</a></li>
+         </ul>       
+         <ul>
+            <li><a href="#">Contact Us</a></li>
+         </ul>
+      </nav>
+      <p>Prissy's Bakery &copy; 2018 All Rights Reserved</p>
+   </footer>
+</body>
+</html>
